@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useAuth from './../../../Hooks/useAuth';
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
+
 
 const MyOrders = () => {
 
@@ -11,7 +10,7 @@ const MyOrders = () => {
      const email = user.email;
 
     useEffect(() => {
-    fetch(`http://localhost:5000/myOrders/${email}`)
+    fetch(`https://gruesome-grave-01200.herokuapp.com/myOrders/${email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [email]);
@@ -19,7 +18,7 @@ const MyOrders = () => {
       let handleDelete =(id)=>{
           const confirmed = window.confirm("Are You Sure to Cancel Your Order?")
           if(confirmed){
-         const url = `http://localhost:5000/myOrders/${id}`;
+         const url = `https://gruesome-grave-01200.herokuapp.com/myOrders/${id}`;
          fetch(url, {
              method:'DELETE'
          })
@@ -60,7 +59,7 @@ const MyOrders = () => {
                                  <li className="list-group-item text-danger"> Status : Pending </li>
                             </ul>
                                 
-                                <Button onClick={()=>handleDelete(item._id)} variant="contained" color="error" endIcon={<DeleteIcon />}> Cancel Order </Button>
+                                <button onClick={()=>handleDelete(item._id)} className='btn btn-danger'> Cancel Order </button>
                          </div>  
                                     
                                 </div>           

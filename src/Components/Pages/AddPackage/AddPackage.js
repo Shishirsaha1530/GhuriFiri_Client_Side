@@ -5,7 +5,7 @@ const axios = require('axios');
 const AddPackage = () => {
   const { register, handleSubmit,reset } = useForm();
   const onSubmit = data =>{
-        axios.post('http://localhost:5000/packages', data)
+        axios.post('https://gruesome-grave-01200.herokuapp.com/packages', data)
             .then(response => {
                 if (response.data.insertedId) {
                     alert('New Package Has Been Added');

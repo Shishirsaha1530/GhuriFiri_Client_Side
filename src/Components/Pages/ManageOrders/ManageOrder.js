@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
-
 
 const ManageOrder = () => {
     const [orders, setOrders] = useState([]);
  
     useEffect(() => {
-    fetch(`http://localhost:5000/myOrders`)
+    fetch(`https://gruesome-grave-01200.herokuapp.com/myOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -15,7 +12,7 @@ const ManageOrder = () => {
       let handleDelete =(id)=>{
           const confirmed = window.confirm("Are You Sure to Cancel Your Order?")
           if(confirmed){
-         const url = `http://localhost:5000/myOrders/${id}`;
+         const url = `https://gruesome-grave-01200.herokuapp.com/myOrders/${id}`;
          fetch(url, {
              method:'DELETE'
          })
@@ -60,7 +57,7 @@ const ManageOrder = () => {
                                  <li className="list-group-item"> Phone Number: {item.phone} </li>
                                  <li className="list-group-item"> <button onClick={()=>handleApprove(item.details._id)} className='btn btn-warning'> Approve Order </button>  </li>
                             </ul>
-                                <Button onClick={()=>handleDelete(item._id)} variant="contained" color="error" endIcon={<DeleteIcon />}> Remove Order </Button>
+                                <button className='btn btn-danger' onClick={()=>handleDelete(item._id)}> Remove Order </button>
                          </div>  
                                     
                     </div>           

@@ -14,7 +14,7 @@ const PlaceOrder = () => {
      data.details = details;
     data.email = user.email;
  
-    fetch(`http://localhost:5000/addOrders`, {
+    fetch(`https://gruesome-grave-01200.herokuapp.com/addOrders`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -32,7 +32,7 @@ const PlaceOrder = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/packages/${id}`)
+        fetch(`https://gruesome-grave-01200.herokuapp.com/packages/${id}`)
         .then(res=>res.json())
         .then(data=> setDetails(data)) 
     },[])

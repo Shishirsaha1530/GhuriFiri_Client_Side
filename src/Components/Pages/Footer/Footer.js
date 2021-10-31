@@ -1,8 +1,5 @@
 import React from 'react';
 import './Footer.css'
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
@@ -49,15 +46,7 @@ const Footer = () => {
                 <li><a href="/">Privacy Policy</a></li>
               </ul>
             </div>
-            <div className="col-md-3">
-              <h3 className='text-white fw-bold'>Follow us</h3>
-              <ul className="list-unstyled social">
-                <li><a href="/"><span className="icon-facebook"> <FacebookIcon/> </span></a></li>
-                <li><a href="/"><span className="icon-twitter"> <TwitterIcon/></span>  </a></li>
-                <li><a href="/"><span className="icon-linkedin"> <InstagramIcon/> </span>  </a></li>
-              </ul>
-            </div>
-            
+           
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, NavLink} from 'react-router-dom';
 import './Header.css';
-import Button from '@mui/material/Button';
 import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
@@ -59,7 +58,7 @@ const Header = () => {
                     {
                       user.displayName?<button  onClick={logOut} className='ms-0 ms-md-1 mt-2 mt-md-0 btn btn-danger' > log out </button>
                       
-                       :<Link to='/login' className='mt-3 mt-md-0'> <Button variant="contained" color="success">Login</Button>  </Link>
+                       :<Link to='/login' className='mt-3 mt-md-0'> <button className='btn btn-success'>Login</button>  </Link>
                     }
                     </li>
                   </ul>

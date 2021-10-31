@@ -6,7 +6,7 @@ const TourPackages = () => {
      let [packages, setPackage] = useState([])
     // loading data
      useEffect(()=>{
-        fetch('http://localhost:5000/packages')
+        fetch('https://gruesome-grave-01200.herokuapp.com/packages')
         .then(res=> res.json())
         .then(data=>setPackage(data))
     },[])

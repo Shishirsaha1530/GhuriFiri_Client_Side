@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
 import './PackageCard.css'
 const PackageCard = (props) => {
     const {name, description, duration, price, img, _id} = props.packageItem;
@@ -19,7 +17,7 @@ const PackageCard = (props) => {
                     <li className="list-group-item">Package Fee: {price} taka</li>
                 </ul>
                 <Link to={`/booking/${_id}`} className='my-3 mx-auto'>
-                <Button variant="contained" color="success" endIcon={<SendIcon />}>Book Now </Button></Link>
+                <button className='btn btn-success'>Book Now </button></Link>
                 </div>
         </div>
     );
